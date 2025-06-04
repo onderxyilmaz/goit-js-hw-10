@@ -30,9 +30,31 @@ const options = {
     if (selectedDate <= currentDate) {
       // Geçmiş tarih seçildiğinde uyarı göster
       iziToast.error({
-        title: "Hata",
+        title: "Error",
         message: "Please choose a date in the future",
         position: "topCenter",
+        backgroundColor: "#FF5252",
+        theme: "dark",
+        closeOnClick: true,
+        timeout: 5000, // 5 saniye sonra otomatik kapanacak
+        progressBar: true, // İlerleme çubuğunu göster
+        close: false, // Varsayılan kapatma düğmesini devre dışı bırak
+        buttons: [
+          ["<button>X</button>", function (instance, toast) {
+            instance.hide({
+              transitionOut: "fadeOutUp",
+            }, toast, "buttonClicked");
+          }, false, {
+            backgroundColor: "#444",
+            color: "#fff",
+            borderRadius: "3px",
+            padding: "5px 10px",
+            fontSize: "14px",
+            hover: {
+              backgroundColor: "#333"
+            }
+          }]
+        ]
       });
       startButton.disabled = true;
     } else {
