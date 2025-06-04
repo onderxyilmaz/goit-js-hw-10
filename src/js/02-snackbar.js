@@ -31,6 +31,10 @@ form.addEventListener("submit", function (event) {
         title: "Success",
         message: `✅ Fulfilled promise in ${delay}ms`,
         position: "topRight",
+        timeout: 5000,
+        closeOnClick: true,
+        backgroundColor: "#4CAF50",
+        theme: "dark",
       });
     })
     .catch((delay) => {
@@ -39,6 +43,10 @@ form.addEventListener("submit", function (event) {
         title: "Error",
         message: `❌ Rejected promise in ${delay}ms`,
         position: "topRight",
+        timeout: 5000,
+        closeOnClick: true,
+        backgroundColor: "#FF5252",
+        theme: "dark",
       });
     });
 
